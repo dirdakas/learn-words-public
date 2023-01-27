@@ -1,0 +1,42 @@
+<div class="app-ask-for-feature">
+  <ng-container
+    *ngIf="isLoading; then loading; else showForm">
+  </ng-container>
+</div>
+
+<ng-template #showForm>
+  <form
+    *ngIf="form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>What feature you would like?</mat-label>
+      <textarea matInput formControlName="feature"></textarea>
+      <mat-error *ngIf="form.get('feature').hasError('required')">
+        Text is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-wrapper">
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary">
+        Submit
+      </button>
+
+      <button
+        mat-raised-button
+        (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #loading>
+  <div class="loader-wrapper">
+    <app-loader></app-loader>
+  </div>
+</ng-template>

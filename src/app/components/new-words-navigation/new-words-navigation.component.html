@@ -1,0 +1,25 @@
+<div class="no-words-found">
+  <ng-container [ngSwitch]="navigateTo">
+    <ng-container
+      *ngSwitchCase="routesEnum.selectedWords">
+      <h2>No learned words found</h2>
+      <button
+        [routerLink]="'/' + navigateTo"
+        mat-raised-button
+        color="primary">
+        lets learn
+      </button>
+    </ng-container>
+
+    <ng-container
+      *ngSwitchCase="routesEnum.selectNew">
+      <h2>No words selected to learn</h2>
+      <button
+        [routerLink]="'/' + navigateTo"
+        mat-raised-button
+        color="primary">
+        lets add new words
+      </button>
+    </ng-container>
+  </ng-container>
+</div>

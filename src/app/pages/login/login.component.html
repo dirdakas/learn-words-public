@@ -1,0 +1,45 @@
+<section class="centered-form">
+  <form
+    *ngIf="loginForm"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()">
+
+    <mat-form-field>
+      <input
+        type="text"
+        formControlName="username"
+        matInput
+        placeholder="Login credentials">
+      <mat-error *ngIf="loginForm.get('username').hasError('required')">
+        Login name is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        type="password"
+        formControlName="password"
+        matInput
+        placeholder="Password">
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <!-- <div class="re-captcha">
+      <re-captcha
+        formControlName="reCaptcha"
+        siteKey="6LcOuyYTAAAAAHTjFuqhA52fmfJ_j5iFk5PsfXaU">
+      </re-captcha>
+    </div> -->
+
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary">
+      Submit
+    </button>
+  </form>
+</section>
+
+<app-loader *ngIf="isLoading"></app-loader>

@@ -1,0 +1,22 @@
+<div class="learned-words-wrapper">
+  <ng-container *ngIf="learnedWords.length then words; else notFound"></ng-container>
+</div>
+
+<app-loader *ngIf="isLoading"></app-loader>
+
+<ng-template #words>
+  <button
+    *ngFor="let word of learnedWords"
+    mat-raised-button
+    color="primary"
+    [ngClass]="{ 'requesting-for-details': translationNeededWords.includes(word) }"
+    (click)="openBottomSheet(word)">
+    {{ word }}
+  </button>
+</ng-template>
+
+<ng-template #notFound>
+  <app-new-words-navigation
+    [navigateTo]="routesEnum.selectedWords">
+  </app-new-words-navigation>
+</ng-template>

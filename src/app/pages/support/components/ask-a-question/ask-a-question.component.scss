@@ -1,0 +1,36 @@
+.app-ask-a-question {
+  display: inline-block;
+
+  mat-form-field {
+    width: 100%;
+
+    textarea {
+      height: 200px;
+    }
+
+    margin-bottom: 20px;
+  }
+
+  .button-wrapper {
+    width: 100%;
+
+    button {
+      &:nth-child(1) {
+        float: right;
+      }
+
+      &:nth-child(2) {
+        float: left;
+      }
+    }
+  }
+
+  .loader-wrapper {
+    height: 100px;
+    width: 100px;
+
+    app-loader {
+      position: relative;
+    }
+  }
+}

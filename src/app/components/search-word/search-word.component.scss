@@ -1,0 +1,21 @@
+.search-word {
+  display: inline-block;
+  width: 100%;
+
+  form {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+
+    mat-form-field {
+      margin: 15px 15px 0 0;
+      display: inline-block;
+      width: 220px;
+    }
+
+    button {
+      display: inline-block;
+      margin: 10px auto;
+    }
+  }
+}

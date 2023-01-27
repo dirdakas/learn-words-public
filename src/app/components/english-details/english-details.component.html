@@ -1,0 +1,20 @@
+<mat-accordion>
+  <mat-expansion-panel
+    *ngFor="let item of utilsService.getKeys(definitions)">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ item }} ({{ definitions[item].length}})
+      </mat-panel-title>
+      <mat-panel-description>
+        {{ typesEnum[item] }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-container *ngFor="let info of definitions[item]; let index = index;">
+      <p class="explanation">{{ info.example }}</p>
+      <p class="example">"{{ info.explanation }}"</p>
+      <mat-divider *ngIf="index < definitions[item].length - 1"></mat-divider>
+    </ng-container>
+    
+  </mat-expansion-panel>
+</mat-accordion>

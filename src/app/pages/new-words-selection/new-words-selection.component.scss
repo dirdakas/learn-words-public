@@ -1,0 +1,47 @@
+.new-words-wrapper {
+  height: 75%;
+  display: inline-block;
+  overflow-y: auto;
+
+
+  .random-size-wrapper {
+    display: inline-block;
+    width: 100%;
+
+    .random-size {
+      margin: 15px auto;
+      display: block;
+      width: 300px;
+    }
+  }
+
+  button {
+    display: inline-block;
+    margin: 10px 15px;
+
+    &.not-selected {
+      background-color: rgba(0,0,0,.12);
+      color: #3f51b5;
+    }
+  }
+}
+
+.actions {
+  display: inline-block;
+  width: 100%;
+
+  .select-new-words {
+    text-align: center;
+
+    button {
+      font-size: 25px;
+      padding: 10px 25px;
+    }
+  }
+
+  .regenerate {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

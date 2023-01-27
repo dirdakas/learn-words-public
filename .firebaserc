@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lets-learn-words": {
+      "hosting": {
+        "learn-words": [
+          "lets-learn-words"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lets-learn-words"
+  }
+}

@@ -1,0 +1,52 @@
+<mat-nav-list *ngIf="(user$ | async) as user">
+  <mat-list-item>
+    <button mat-icon-button
+            (click)="onNavigateTo(routesEnum.home)">
+      <mat-icon>equalizer</mat-icon>
+      <span class="nav-caption">Statistics</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button
+            (click)="onNavigateTo(routesEnum.selectNew)">
+      <mat-icon>fiber_new</mat-icon>
+      <span class="nav-caption">Select new words</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button
+            (click)="onNavigateTo(routesEnum.selectedWords)">
+      <mat-icon>check</mat-icon>
+      <span class="nav-caption">Selected words</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button
+            (click)="onNavigateTo(routesEnum.learnedWords)">
+      <mat-icon>school</mat-icon>
+      <span class="nav-caption">Learned words</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button
+            disabled="true"
+            (click)="onNavigateTo(routesEnum.learningGames)">
+      <mat-icon>toys</mat-icon>
+      <span class="nav-caption">Learning games</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button
+            (click)="onNavigateTo(routesEnum.support)">
+      <mat-icon>contact_support</mat-icon>
+      <span class="nav-caption">Support</span>
+    </button>
+  </mat-list-item>
+  <mat-list-item>
+    <button mat-icon-button
+            (click)="onLogout()">
+      <mat-icon>power_settings_new</mat-icon>
+      <span class="nav-caption">Logout</span>
+    </button>
+  </mat-list-item>
+</mat-nav-list>

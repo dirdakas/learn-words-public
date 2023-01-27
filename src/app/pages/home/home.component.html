@@ -1,0 +1,44 @@
+<div class="app-home">
+  <ng-container *ngIf="progression && wordsList then statistics; else notFound"></ng-container>
+</div>
+
+<app-loader *ngIf="isLoading"></app-loader>
+
+<ng-template #statistics>
+  <ngx-charts-pie-chart
+    [view]="view"
+    [results]="single"
+    [gradient]="true"
+    [legend]="true"
+    [labels]="true"
+    [doughnut]="false"
+    [legendPosition]="legendPosition">
+  </ngx-charts-pie-chart>
+
+  <mat-list role="list">
+    <mat-list-item role="listitem">
+      Learned:
+      <b>
+        {{ progression.learnedWords.length}}
+      </b>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      Learning:
+      <b>
+        {{ progression.learningWords.length}}
+      </b>
+    </mat-list-item>
+    <mat-list-item role="listitem">
+      Unknown:
+      <b>
+        {{ wordsList.length - (progression.learnedWords.length + progression.learningWords.length )}}
+      </b>
+    </mat-list-item>
+  </mat-list>
+
+
+</ng-template>
+
+<ng-template #notFound>
+  <h1 class="no-data">There is no personal data for statistics :/</h1>
+</ng-template>

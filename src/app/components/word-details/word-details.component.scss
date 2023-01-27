@@ -1,0 +1,22 @@
+.wrapper {
+  .english {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 15px;
+    text-align: center;
+  }
+
+  .loader-wrapper {
+    height: 100px;
+    width: 100px;
+
+    app-loader {
+      position: relative;
+    }
+  }
+
+  .no-translation {
+    text-align: center;
+  }
+}

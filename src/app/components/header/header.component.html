@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <button
+    *ngIf="isAuth$ | async"
+    mat-icon-button
+    (click)="onToggleSideNav()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div *ngIf="!(isAuth$ | async)" class="user-actions">
+    <ul class="navigation-items">
+      <li>
+        <a routerLink="{{ '/' + routesEnum.login }}">Login</a>
+      </li>
+      <li>
+        <!-- <a routerLink="{{ '/' + routesEnum.signUp }}">SignUp</a> -->
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

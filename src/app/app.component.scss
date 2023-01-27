@@ -1,0 +1,13 @@
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+main {
+  height: calc(100% - 60px);
+}
+
+mat-sidenav {
+  width: 250px;
+}

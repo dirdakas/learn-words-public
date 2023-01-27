@@ -1,0 +1,28 @@
+<mat-list role="list">
+  <mat-list-item
+    role="listitem"
+    matRipple
+    (click)="showDetails()">
+    Show details
+  </mat-list-item>
+  <mat-list-item
+    *ngIf="!wordDetails.isWordLearned"
+    role="listitem"
+    matRipple
+    (click)="learnedWord()">
+    I learned it!
+  </mat-list-item>
+  <mat-list-item
+    *ngIf="wordDetails.isWordLearned"
+    role="listitem"
+    matRipple
+    (click)="unLearnWord()">
+    I don't know this word, add to learning
+  </mat-list-item>
+  <mat-list-item
+    role="listitem"
+    matRipple
+    (click)="removeFromProgress()">
+    Remove from my words
+  </mat-list-item>
+</mat-list>

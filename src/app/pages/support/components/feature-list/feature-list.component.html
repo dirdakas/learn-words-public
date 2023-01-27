@@ -1,0 +1,13 @@
+<div class="app-feature-list">
+  <ng-container *ngIf="isLoading; then loading; else list"></ng-container>
+</div>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>
+
+<ng-template #list>
+  <mat-card *ngFor="let feature of featureList">
+    {{ feature.description }}
+  </mat-card>
+</ng-template>

@@ -1,0 +1,52 @@
+<app-search-word (foundWords)="searchWords($event)"></app-search-word>
+<section class="new-words-wrapper">
+  <div class="random-size-wrapper">
+    <mat-form-field class="random-size">
+      <mat-label>Choose one</mat-label>
+      <mat-select [(ngModel)]="numberOfNewWords" (selectionChange)="onSizeChange($event)">
+        <mat-option [value]="5">5</mat-option>
+        <mat-option [value]="10">10</mat-option>
+        <mat-option [value]="20">20</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <br />
+  <button
+    *ngFor="let word of newWords"
+    mat-raised-button
+    color="primary"
+    [ngClass]="{ 'not-selected': !isWordSelected(word) }"
+    (click)="selectWord(word)">
+    {{ word }}
+  </button>
+
+  <button
+    *ngFor="let word of findMyWords"
+    mat-raised-button
+    color="accent"
+    [ngClass]="{ 'not-selected': !isWordSelected(word) }"
+    (click)="selectWord(word)">
+    {{ word }}
+  </button>
+</section>
+<section class="actions">
+  <div class="select-new-words">
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="setNewListForSelectedWords()">
+      Set new list
+    </button>
+  </div>
+
+  <button
+    mat-fab
+    class="regenerate"
+    color="primary"
+    (click)="setNewRandomList()">
+    <mat-icon>autorenew</mat-icon>
+  </button>
+
+  <app-loader *ngIf="isLoading"></app-loader>
+</section>

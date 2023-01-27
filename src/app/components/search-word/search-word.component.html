@@ -1,0 +1,31 @@
+<section class="search-word">
+    <form
+      *ngIf="searchForm"
+      [formGroup]="searchForm"
+      (ngSubmit)="onSubmit()">
+  
+      <mat-form-field>
+        <input
+          type="text"
+          formControlName="newWord"
+          matInput
+          placeholder="Find my word">
+        <mat-error *ngIf="searchForm.get('newWord').hasError('required')">
+          Text is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="searchForm.get('newWord').hasError('toMany')">
+          Found too <strong>many</strong> results, add more letter for search
+        </mat-error>
+        <mat-error *ngIf="searchForm.get('newWord').hasError('notFound')">
+          <strong>No</strong> words found
+        </mat-error>
+      </mat-form-field>
+  
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary">
+        Find
+      </button>
+    </form>
+  </section>

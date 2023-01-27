@@ -1,0 +1,9 @@
+.learned-words-wrapper {
+  button {
+    margin: 10px 15px;
+
+    &.requesting-for-details {
+      border-right: 10px solid lime;
+    }
+  }
+}
